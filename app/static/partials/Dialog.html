@@ -1,0 +1,16 @@
+	<div class="row">
+       <div data-ng-include="'partials/TopPage.html'"></div>
+       <a href="/">Home</a>
+       <div class="question" data-ng-show="question">
+            <span>{{question.label}}</span>
+		    <div class="answer" data-ng-include="'partials/'+question.type+'.html'">       
+		    </div>
+       
+            <div class="btn-group btn-group-sm" data-ng-show="showButton">
+            <button class="btn btn-primary btn-sm glyphicon glyphicon-play" type="button"  data-ng-click="assess(response)"> Assess</button>     					
+            </div>	
+       </div>
+       <div style="margin:5px 0;overflow-y:scroll; overflow-x:hidden; height:400px;" 
+       data-ng-include="'partials/recommendation.html'">       
+	</div>	
+	</div>

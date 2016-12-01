@@ -1,0 +1,17 @@
+declared-services:
+  NaturalLanguageClassifier:
+    label: natural_language_classifier 
+    plan: 'standard'
+  BusinessRules:
+    label: businessrules
+    plan: 'standard'
+
+applications:
+- name: ContextDrivenDialog
+  memory: 128M
+  path: app
+  random-route: true
+  command: python app.py
+  services:
+  - NaturalLanguageClassifier
+  - BusinessRules

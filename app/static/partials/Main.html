@@ -1,0 +1,9 @@
+	<div class="row" data-ng-controller="HomeCtrl">
+       <div data-ng-include="'partials/TopPage.html'"></div>
+	   <p data-ng-bind-html="introduction"></p>
+		<form class="form col-md-12">
+		<input type="text" size="80" data-ng-model="query" placeholder="query"></input>
+		<button class="glyphicon glyphicon-plus-sign btn btn-primary btn-sm" type="button" data-ng-click="helpMe(query)"> Query</button>	  
+		</form>
+		
+	</div>

@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html lang="en" data-ng-app="DDApp">
+<head>
+ <!--  
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+      -->  
+    <link rel="stylesheet" href="stylesheets/angular-csp.css"/>
+    <link rel="stylesheet" href="stylesheets/font-awesome.min.css"/>
+     <link rel="stylesheet" href="stylesheets/bootstrap.css"/>
+    <link rel="stylesheet" href="stylesheets/bootstrap.min.css"/>
+    <link rel="stylesheet" href="stylesheets/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="stylesheets/style.css"/>
+
+    <link rel="icon" href="images/eng_8.png"/>
+    
+    <title>Context Driven Dialog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<!--   --> 
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-resource.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-sanitize.js"></script>
+
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-cookies.js"></script>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-aria.min.js"></script>  
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-messages.min.js"></script>  
+  <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+
+
+    <script type="text/javascript" src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-1.0.3.js"></script>
+    <script type="text/javascript" src="http://fgnass.github.io/spin.js/spin.min.js"></script>
+
+   	<script type="text/javascript" src="./javascripts/angular-spinner.js"></script>
+	<script type="text/javascript" src="./javascripts/jquery.js"></script>
+    
+ 	<script type="text/javascript"  src="./javascripts/DDApp.js"></script>
+    <script type="text/javascript"  src="./javascripts/controllers.js"></script>
+	 <script type="text/javascript"  src="./javascripts/services.js"></script>
+
+  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+   	
+</head>
+<body>  
+    <div class="container">	  
+	     <div class="row rowmaxview" data-ng-view>
+	     <span spinner="{radius:30, width:8, length: 16}"></span>
+		</div> 
+ 
+    	   <div id="footer" class="row rowmaxview">
+	           	<div class="margin-footer">
+	               	<div class="footer-body">
+	                   	<p>&copy; IBM | Cloud Service | 2016</p>
+	               	</div>
+	           	</div>         
+            </div>    
+        </div>
+  
+</body>
+</html>

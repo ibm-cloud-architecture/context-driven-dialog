@@ -1,0 +1,16 @@
+  <div class="answer" data-ng-repeat="r in recommendations">
+    <div data-ng-init="rate = r.confidence * 10; percent=r.confidence*100" >
+		<img src="images/smarter.png" width="40px" height="40px"/>
+		       
+		<span>{{r.message}}</span><br/>
+		<input data-ng-model="r.accepted" type="checkbox" value="{{r.accepted}}"> Accept?</input>
+	   	<br/><label>Confidence: </label> 
+	   	<uib-rating ng-model="rate" max="max" on-hover="hoveringOver(value)" state-on="'glyphicon-ok-sign'" state-off="'glyphicon-ok-circle'"
+	    aria-labelledby="confidence"></uib-rating> 
+	     <span class="label" data-ng-class="{'label-warning': percent<30, 'label-info': percent>=30 && percent<70, 'label-success': percent>=70}">{{percent}}%</span>    
+    </div>
+
+  </div>
+ 
+
+ 

@@ -1,0 +1,50 @@
+	<div class="row" data-ng-controller="HomeCtrl">
+       <div data-ng-include="'partials/TopPage.html'"></div>
+		<p>
+      Welcome to this Context Driven Dialog demonstration.
+      
+      The application is built as an example to demonstrate a customer care application for a mobile telecom company. 
+      </p>
+      <p>
+      This application simulates a Customer Support front end which lets a registered user interact with the support system using natural language. 
+      As the conversation progresses the support system will load relevant customer data from external systems, such as a Customer Relationship Management (CRM) system, to be able to ask informed questions.
+      </p>
+      <p>
+      This demonstration system is trained to understand related to device batteries, and the CRM system stub has hard-coded entries for an iPhone and an iPad for the user.
+      </p>
+      
+      
+      <div ng-controller="HomeCtrl" class="md-padding" id="popupContainer" ng-cloak>
+    <p class="inset">
+      Please log in to start the demonstration. Usernames will not be validated, and are only for demonstration purposes.
+    </p>
+    <md-button class="md-primary md-raised" ng-click="showLoginPrompt($event)"  >
+      Log In
+    </md-button>
+      
+      </div>
+      <p>
+    </p>
+ </div>
+
+
+
+
+
+<div ng-controller="HomeCtrl" class="md-padding" id="popupContainer" ng-cloak>
+ <div style="visibility: hidden">
+    <div class="md-dialog-container" id="myDialog">
+      <md-dialog layout-padding>
+        <h2>Pre-Rendered Dialog</h2>
+        <p>
+          This is a pre-rendered dialog, which means that <code>$mdDialog</code> doesn't compile its
+          template on each opening.
+          <br/><br/>
+          The Dialog Element is a static element in the DOM, which is just visually hidden.<br/>
+          Once the dialog opens, we just fetch the element from the DOM into our dialog and upon close
+          we restore the element back into its old DOM position.
+        </p>
+      </md-dialog>
+    </div>
+  </div>
+ </div>

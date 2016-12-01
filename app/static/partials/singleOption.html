@@ -1,0 +1,11 @@
+<form>
+
+<table>
+  <tr data-ng-repeat="option in question.options">
+    <td><label><input data-ng-model="response.value" data-ng-readonly="readOnly" type="radio" value="{{option.name}}"/> {{option.name}}</label></td>
+  </tr>
+
+</table>
+
+
+</form>

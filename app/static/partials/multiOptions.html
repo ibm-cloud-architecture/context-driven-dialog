@@ -1,0 +1,10 @@
+<table>
+  <tr data-ng-repeat="option in question.options">
+    <td>
+      <label>
+        <input data-ng-model="option.selected" data-ng-readonly="readOnly" uib-tooltip="{{option.tooltip}}"
+               type="checkbox"/> {{option.name}}
+      </label>
+    </td>
+  </tr>
+</table>
