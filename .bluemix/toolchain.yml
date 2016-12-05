@@ -1,0 +1,58 @@
+---
+default_locale: en
+locales: 
+  $ref: locales.yml
+name: "Simple Cloud Foundry toolchain"
+description: "Context Driven Dialog reference application Toolchain. \n\
+In this window, you will be asked to specify the following properties for your toolchain: \n\n\
+1. Specify a name for your toolchain that is __unique__ among all toolchains on your Bluemix namespace DevOps section. \n\
+2. Click on the __GitHub__ icon. This opens the GitHub settings. Please, give your desired name to the repo that will be cloned. \n\
+3. Click on the __Delivery Pipeline__ icon. This opens the delivery pipeline settings: \n\n\
+\t - Specify the __Region__, __Organisation__ and __Space__ where your app will be hosted. \n\
+4. Click the Create button to complete the toolchain creation."
+version: 0.1
+image: data:image/svg+xml;base64,$file(toolchain.svg,base64)
+icon: data:image/svg+xml;base64,$file(icon.svg,base64)
+required: 
+ - deploy
+ - sample-repo
+
+# Github repos
+sample-repo:
+  service_id: githubpublic
+  parameters:
+    repo_name: "{{name}}"
+    repo_url: https://github.com/hassenius/dynamic-dialogue
+    type: link
+    has_issues: false
+
+# Pipelines
+sample-build:
+  service_id: pipeline
+  parameters:
+    name: "{{name}}"
+    ui-pipeline: true
+    configuration: 
+     content: $file(pipeline.yml)
+     env:
+      SAMPLE_REPO: "sample-repo"
+      CF_APP_NAME: "{{deploy.parameters.prod-app-name}}"
+      PROD_SPACE_NAME: "{{deploy.parameters.prod-space}}"
+      PROD_ORG_NAME: "{{deploy.parameters.prod-organization}}"
+      PROD_REGION_ID: "{{deploy.parameters.prod-region}}"
+     execute: true
+    services: ["sample-repo"]
+  hidden: [form, description]
+    
+
+#Web IDE
+webide:
+  service_id: orion
+  
+#Deployment
+deploy:
+  schema: 
+    $ref: deploy.json
+  service-category: pipeline
+  parameters:
+    prod-app-name: "{{sample-repo.parameters.repo_name}}"

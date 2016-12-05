@@ -69,7 +69,7 @@ You will need an account on Bluemix. If you are not already signed up, you can s
 
 ## Single click deploy via DevOps Services
 
-[![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/hassenius/dynamic-dialogue)
+[![Deploy to Bluemix](https://console.ng.bluemix.net/devops/graphics/create_toolchain_button.png)](https://console.ng.bluemix.net/devops/setup/deploy/?repository=https%3A//github.com/hassenius/context-driven-dialog)
 
 Enjoy! (note, it may take minute or so for the app to start)
 
