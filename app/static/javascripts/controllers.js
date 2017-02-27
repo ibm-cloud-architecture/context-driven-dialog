@@ -38,15 +38,15 @@ theCtrls.controller('HomeCtrl',  ['$scope', '$rootScope', '$location','ddService
       // Check if a username has been provided. Prompt for one if this is not the case
       //if ($cookies.get('username') === undefined) {
 
-			if ($scope.introduction === undefined){
-				$http.get("data/intro.json").then(function(response) {
-			          $scope.introduction= $sce.trustAsHtml(response.data.content);
-		      },function(error) {
-		    	  return [];
-		      });
-			}
-			$scope.title="Context Driven Dialog";
-      $rootScope.username=$cookies.get('username')
+		if ($scope.introduction === undefined){
+			$http.get("data/intro.json").then(function(response) {
+		          $scope.introduction= $sce.trustAsHtml(response.data.content);
+	      },function(error) {
+	    	  return [];
+	      });
+		}
+		$scope.title="Context Driven Dialog";
+		$rootScope.username=$cookies.get('username')
       
       // when user pushes the login button in /login
       $scope.showLoginPrompt = function(ev) {
@@ -74,8 +74,8 @@ theCtrls.controller('HomeCtrl',  ['$scope', '$rootScope', '$location','ddService
         $location.path('/')
       };
       
-			// when user pushes query button
-			$scope.helpMe = function(query) {
+	  // when user pushes query button
+	  $scope.helpMe = function(query) {
 				 var cq={}
 				 cq.userId=$cookies.get('username');
 				 cq.firstQueryContent=query;
@@ -85,18 +85,19 @@ theCtrls.controller('HomeCtrl',  ['$scope', '$rootScope', '$location','ddService
 						data: cq,
 						headers: {'Content-Type': 'application/json'}	
 				 }).then(function(response){
-                  if (response.data.error) { 
-                    alert(response.data.error);
-                    $location.path('/');
-                    return false;
-                  }
-					        assessment=response.data;
-					        ddService.setAssessment(assessment);
-					 		 $location.path('/dialog');
-				  		},function(error) {
-							alert("Query failed.");
-						}); 
-				 };
+					 if (response.data.error) { 
+						 alert(response.data.error);
+						 $location.path('/dialog');
+						 return false;
+					 }
+					 assessment=response.data;
+					 ddService.setAssessment(assessment);
+					 $location.path('/dialog');
+				     },function(error) {
+						alert("Query failed.");
+						 $location.path('/dialog');
+				   }); 
+				};
       }	
 ]);// home ctrl
 
